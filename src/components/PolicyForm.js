@@ -39,10 +39,14 @@ const PolicyForm = ({ selectedPolicy, onSubmit, onClose }) => {
           onChange={handleChange}
           required
         ></textarea>
-        <button type="submit">{selectedPolicy ? "Update" : "Create"}</button>
-        <button type="button" onClick={onClose}>
-          Cancel
-        </button>
+        <div className="button-container">
+          <button className="button-hover" type="submit">
+            {selectedPolicy ? "Update" : "Create"}
+          </button>
+          <button className="button-hover" type="button" onClick={onClose}>
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );

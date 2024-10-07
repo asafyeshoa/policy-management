@@ -1,6 +1,10 @@
 .App {
   text-align: center;
   height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* AppBar */
@@ -26,12 +30,10 @@
 /* PolicyList */
 
 .policy-list-view {
-  min-width: 400px;
-  max-width: 600px;
-  margin: 50px auto;
   padding: 25px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  overflow-y: scroll;
 }
 
 h2 {
@@ -147,7 +149,7 @@ button {
   background-color: #f1f1f1;
   text-align: center;
   padding: 20px 0px 20px 0px;
-  position: absolute;
+  position: sticky;
   bottom: 0;
   width: 100%;
 }
@@ -188,6 +190,10 @@ button {
   }
 
   .policy-list-view {
-    min-width: 200px;
+    padding: 5px;
+  }
+
+  .policy-form {
+    width: 300px;
   }
 }

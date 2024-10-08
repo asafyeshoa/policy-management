@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import "../styles/AppBar.css";
+import React from "react";
 
 const links = [
   { path: "/", label: "Home Page" },

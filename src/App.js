@@ -1,12 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import {
-  AppBar,
-  PolicyForm,
-  Footer,
-  CountdownRedirect,
-} from "./components/index.js";
-import { HomePage, AgentsPage, ManagementPage } from "./pages/index.js";
+import { AppBar, PolicyForm, Footer, CountdownRedirect } from "./components";
+import { HomePage, AgentsPage, ManagementPage } from "./pages";
 import "./styles/App.css";
 
 // Moak data demonstration server calls
@@ -46,17 +41,22 @@ const policiesData = [
   },
 ];
 
-const App = () => {
-  const [user, setUser] = useState(null);
+const App = ({ initialUser }) => {
+  const [user, setUser] = useState(initialUser || null);
+
   const [policies, setPolicies] = useState(policiesData);
   const [selectedPolicy, setSelectedPolicy] = useState(null);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   useEffect(() => {
-    // Demostration diffrenet users
-    const randomUser = usersData[Math.floor(Math.random() * usersData.length)];
-    setUser(randomUser);
-  }, []);
+    // initialUser exists for tests purpose only
+    if (!initialUser) {
+      // Demostration diffrenet users
+      const randomUser =
+        usersData[Math.floor(Math.random() * usersData.length)];
+      setUser(randomUser);
+    }
+  }, [initialUser]);
 
   const handleAddPolicy = (newPolicy) => {
     setPolicies([...policies, { ...newPolicy, id: policies.length + 1 }]);

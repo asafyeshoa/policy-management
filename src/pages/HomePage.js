@@ -1,4 +1,4 @@
-import { PolicyList, PolicyForm } from "../components/index.js";
+import { PolicyList, PolicyForm } from "../components";
 
 const HomePage = ({
   user,

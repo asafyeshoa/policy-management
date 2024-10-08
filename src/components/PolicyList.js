@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "../styles/PolicyList.css";
+import PolicyDetails from "./PolicyDetails";
 
 const PolicyList = ({ user, policies, onEdit, onDelete, onAdd }) => {
   const [details, setDetails] = useState(null);
@@ -30,7 +31,6 @@ const PolicyList = ({ user, policies, onEdit, onDelete, onAdd }) => {
           <tr>
             <th>ID</th>
             <th>Name</th>
-            {user?.role === "Management" && <th>Real Cost</th>}
             <th>Actions</th>
           </tr>
         </thead>
@@ -39,7 +39,6 @@ const PolicyList = ({ user, policies, onEdit, onDelete, onAdd }) => {
             <tr key={policy.id}>
               <td>{policy.id}</td>
               <td>{policy.name}</td>
-              {user?.role === "Management" && <td>{policy.realCost}</td>}
 
               <td>
                 <div className="button-container">
@@ -80,19 +79,7 @@ const PolicyList = ({ user, policies, onEdit, onDelete, onAdd }) => {
       </table>
 
       {details && (
-        <div className="details-popup">
-          <h3>Policy Details</h3>
-          <p>
-            <strong>ID:</strong> {details.id}
-          </p>
-          <p>
-            <strong>Name:</strong> {details.name}
-          </p>
-          <p>
-            <strong>Description:</strong> {details.description}
-          </p>
-          <button onClick={closeDetails}>Close</button>
-        </div>
+        <PolicyDetails details={details} user={user} onClose={closeDetails} />
       )}
     </div>
   );

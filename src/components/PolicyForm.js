@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "../styles/PolicyForm.css";
 
 const PolicyForm = ({ selectedPolicy, onSubmit, onClose }) => {
   const [policy, setPolicy] = useState({ id: "", name: "", description: "" });

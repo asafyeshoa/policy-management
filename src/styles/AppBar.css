@@ -1,0 +1,45 @@
+.app-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  background-color: #282c34;
+  color: white;
+}
+
+.app-title {
+  margin: 0;
+}
+
+.app-select {
+  padding: 5px;
+  font-size: 16px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  margin: 5px;
+  background-color: 282c34;
+}
+
+.app-bar-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.link-hover {
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.link-hover:hover {
+  background-color: rgba(18, 68, 167, 0.8);
+}

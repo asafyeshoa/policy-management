@@ -42,7 +42,7 @@ const policiesData = [
     name: "Quote",
     description:
       "An estimated premium cost provided to a potential policyholder",
-    realCost: "00$",
+    realCost: "1000$",
   },
 ];
 
